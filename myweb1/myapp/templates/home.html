@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>hello app</title>
+</head>
+<body>
+
+<div>
+
+<div style="margin-left:400px">
+<form action='/search_query/' method="post">{% csrf_token %}
+        <div>
+      <input type="text"  placeholder="Search" name="search_box" id="search_box">
+            
+                <button type="submit">Search</button>
+            
+        </div>
+ </form>
+</div>
+
+</div>
+<h1><center>List of records</center></h1>
+<div style="margin-left:500px">
+<table>
+
+
+<tr>
+{% for i in record %}
+First name:<a href="{% url 'detail' i.id %}">{{i.first_name}}</a> <br />
+Last name:{{i.last_name}}<br /><br />
+</tr>
+<hr style="margin-left:1px" width="150px">
+</table>
+{% endfor %}
+</div>
+
+<br /><br />
+<a href="/contact/">contact form</a>
+</body>
+</html>

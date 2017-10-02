@@ -1,0 +1,26 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+{% block content %}
+<h1>Contact</h1>
+<form action="" method="post" enctype = "multipart/form-data" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Insert</button>
+	
+</form>
+
+
+{% for i in t%}
+     <p>first name:{{ i.first_name}}<p>
+
+	 <p>Last name:{{ i.last_name}}<p>
+	 
+	 
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>
